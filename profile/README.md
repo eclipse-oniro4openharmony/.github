@@ -13,7 +13,7 @@ is recommended for the full build.
 **To obtain the source code use the following commands:**
 
 ```bash
-repo init -u https://github.com/eclipse-oniro4openharmony/manifest.git -b OpenHarmony-3.2-Release --no-repo-verify
+repo init -u https://github.com/eclipse-oniro4openharmony/manifest.git -b OpenHarmony-4.0-Release --no-repo-verify
 repo sync -c
 repo forall -c 'git lfs pull'
 ```
@@ -27,20 +27,15 @@ repo forall -c 'git lfs pull'
 **To run the build an isolated docker container is recommended:**
 
 ```bash
-docker run -it -v $(pwd):/home/openharmony swr.cn-south-1.myhuaweicloud.com/openharmony-docker/openharmony-docker:1.0.0
+docker run -it -v $(pwd):/home/openharmony swr.cn-south-1.myhuaweicloud.com/openharmony-docker/docker_oh_standard:3.2
 
 ```
 
 **In the Docker instance, run the build:**
 
-Select the target device with (e.g.rk3568):
+Inside the Docker instance, set the target device for the build (e.g. rk3568)
+and use ccache to speed up subsequent builds:
 
 ```bash
-hb set
-```
-
-Start the build:
-
-```bash
-hb build
+./build.sh --product-name rk3568 --ccache
 ```
