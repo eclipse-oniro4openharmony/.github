@@ -1,41 +1,9 @@
 # Welcome to the Eclipse Oniro for OpenHarmony Project
 
-This project is home to add-ons and enhancements for the
-[OpenHarmony](https://www.openharmony.cn) project.
-For more details on Oniro please see our [project
-page](https://oniroproject.org/).
+The Eclipse Oniro for OpenHarmony organization hosts the code and repositories for add-ons and enhancements to the [OpenHarmony](https://www.openharmony.cn) project. These enhancements are part of the broader [Oniro Project](https://oniroproject.org/), an open-source, vendor-neutral operating system managed by the Eclipse Foundation.
 
-## Quick Start
+## Objective of the Project
 
-As prerequisites git-lfs and repo need to be installed. 100GB of free disk space
-is recommended for the full build.
+The goal of this project is to build upon OpenHarmony, extending it with additional functionalities tailored for global markets. This collaboration between the Eclipse Foundation and the OpenAtom Foundation is aimed at driving the development and adoption of OpenHarmony on a global scale.
 
-**To obtain the source code use the following commands:**
-
-```bash
-repo init -u https://github.com/eclipse-oniro4openharmony/manifest.git -b OpenHarmony-4.0-Release --no-repo-verify
-repo sync -c
-repo forall -c 'git lfs pull'
-```
-
-**In the source code directory, fetch the prebuild tools:**
-
-```bash
-./build/prebuilts_download.sh
-```
-
-**To run the build an isolated docker container is recommended:**
-
-```bash
-docker run -it -v $(pwd):/home/openharmony swr.cn-south-1.myhuaweicloud.com/openharmony-docker/docker_oh_standard:3.2
-
-```
-
-**In the Docker instance, run the build:**
-
-Inside the Docker instance, set the target device for the build (e.g. rk3568)
-and use ccache to speed up subsequent builds:
-
-```bash
-./build.sh --product-name rk3568 --ccache
-```
+For further details, including build instructions and more information on how to get started, please refer to the [Oniro Documentation](https://docs.oniroproject.org/) and the [Oniro Project page](https://oniroproject.org/).
